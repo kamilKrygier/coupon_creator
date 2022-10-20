@@ -1,0 +1,290 @@
+body{background-color: #FFFFFF !important;}
+
+.six_nav_wrapper
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 35px;
+    background: #eacda3; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eacda3, #d6ae7b); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eacda3, #d6ae7b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.six_nav_separator
+{
+    height: auto;
+    width: 2px;
+    background-color: rgba(9, 9, 9, .6);
+    margin: 0 35px;
+}
+
+.coupon-form-nav-wrapper,
+.cards-form-nav-wrapper
+{
+    position: relative;
+    max-width: 50vw;
+    display: flex;
+    justify-content: center;
+    /* margin: 25px auto; */
+    grid-column-gap: 35px;
+    /* border-bottom: 1px #efefef solid; */
+    padding: 25px;
+}
+
+.coupon-form-nav-wrapper > .coupon-form-nav-element,
+.cards-form-nav-wrapper > .cards-form-nav-element
+{
+    display: block;
+    background-color: #090909;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    padding: 20px;
+    width: initial;
+    min-width: 124px;
+    transition: .3s ease-in-out;
+    /* transform: scale(1.1); */
+}
+
+.coupon-form-nav-wrapper > .coupon-form-nav-element:not(.active),
+.cards-form-nav-wrapper > .cards-form-nav-element:not(.active)
+{
+    opacity: .6;
+}
+
+.coupon-form-nav-wrapper > .coupon-form-nav-element img,
+.cards-form-nav-wrapper > .cards-form-nav-element img
+{
+    filter: invert(100%) sepia(20%) saturate(0%) hue-rotate(107deg) brightness(107%) contrast(101%);
+    margin: 0 auto 15px auto;
+    max-width: 25px;
+}
+
+.coupon-form-nav-wrapper > .coupon-form-nav-element p,
+.cards-form-nav-wrapper > .cards-form-nav-element p
+{
+    margin: 0;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: .03em;
+}
+
+.coupon-add-form-wrapper,
+.coupon-remove-form-wrapper,
+.coupon-print_code-form-wrapper,
+.card-add_code-form-wrapper
+{
+    display: none;
+    justify-content: center;
+}
+
+form
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+form label
+{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="date"]::placeholder
+{
+    color: #232323;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"]
+
+{
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #090909;
+}
+
+.coupon-form-nav-wrapper .coupon-form-nav-element.active
+{
+    transform: scale(1.1);
+}
+
+.six_coupon_message_box.active
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.six_coupon_message_wrapper
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    background-color: #FFF;
+    padding: 50px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 0.27);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 0.27);
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 0.27);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.six_coupon_message_wrapper > *
+{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.six_couponAdd_popup_close
+{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 9999999999999;
+}
+
+.six_loader_wrapper
+{
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255, .8);
+    z-index: 9999;
+}
+
+.six_loader 
+{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:45px;
+    height:45px;
+    display:inline-block;
+    padding:0px;
+    border-radius:100%;
+    border:5px solid;
+    border-top-color:rgba(246, 36, 89, 1);
+    border-bottom-color:rgba(255,255,255, 0.3);
+    border-left-color:rgba(246, 36, 89, 1);
+    border-right-color:rgba(255,255,255, 0.3);
+    -webkit-animation: six_loader 1s ease-in-out infinite;
+    animation: six_loader 1s ease-in-out infinite;
+}
+
+@keyframes six_loader 
+{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes six_loader 
+{
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
+
+@media only screen and (max-width: 767px)
+{
+    .six_nav_wrapper,
+    .coupon-form-nav-wrapper,
+    .cards-form-nav-wrapper
+    {
+        flex-direction: column; 
+        max-width: initial;
+    }
+
+    .coupon-form-nav-wrapper
+    {
+        grid-row-gap: 15px;
+    }
+
+    .six_nav_wrapper p
+    {
+        width: 100%;
+        text-align: center;
+    }
+
+    .card-add_code-form-wrapper,
+    .coupon-print_code-form-wrapper,
+    .coupon-remove-form-wrapper,
+    .coupon-add-form-wrapper
+    {
+        padding: 0 25px;
+    }
+
+    .six_nav_separator
+    {
+        display: none;
+    }
+
+}
+
+@media print{
+    #printThis,
+    .six_couponAdd_popup_close
+    {visibility: hidden !important;}
+    .six_coupon_message_wrapper,
+    .six_coupon_message_wrapper *
+    {visibility: visible;}
+    #printThis{margin: 0 !important;}
+    .six_coupon_message_wrapper p{margin: 0 !important;}
+    .six_coupon_message_wrapper
+    {
+        position: static !important;
+        transform: none !important;
+        width: max-content !important;
+        height: max-content !important;
+        padding: 2mm !important;
+        max-height: 1.5cm;
+        max-width: 5cm;
+        overflow: hidden;
+    }
+    .six_coupon_message_wrapper > div
+    {
+        text-align: center !important;
+        margin-bottom: 1mm !important;
+        line-height: 1 !important;
+        font-size: 3.3mm !important;
+    }
+}
+#six_navigation_wrapper{display: none !important;}
+#x-root{margin: 0 !important;} 
+
+a.button, .woocommerce-MyAccount-navigation-link a, .x-btn, .vc_btn3, .wp-block-button__link, .wpcf7-submit, .select-paczkomat-button, .wishlist_item .product-action .button, .tinvwl-table-manage-list tfoot .button
+{
+    background-color: #090909 !important;
+    color: #fff !important;
+
+}
