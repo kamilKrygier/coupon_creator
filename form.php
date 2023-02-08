@@ -34,12 +34,15 @@ function couponForm()
         <form id="coupon-add">
             <h1 style="text-align: center;">Dodaj bon</h1>
             <hr>
+
             <label for="coupon-value-input">Wartość bonu:<br>
                 <input id="coupon-value-input" type="number" min="50" placeholder="500" required>
             </label>
+
             <label for="coupon-date-input">Kiedy bon ma się przeterminować:<br>
-                <input id="coupon-date-input" type="date" required>
+                <input id="coupon-date-input" type="date" min="" required>
             </label>
+
             <input class="x-btn" type="submit" value="Utwórz bon">
         </form>
     </div>
@@ -86,7 +89,7 @@ function couponForm()
                 <input id="card-add-input-tel" type="tel" placeholder="730602626" required>
             </label>
             <label for="card-add-input-date"> Data urodzin:<br>
-                <input id="card-add-input-date" type="date" placeholder="dd.mm.rrr" required>
+                <input id="card-add-input-date" type="date" placeholder="dd.mm.rrr" min="1900-01-01" required>
             </label>
             <input class="x-btn" type="submit" value="Zapisz kartę">
         </form>
@@ -100,6 +103,19 @@ function couponForm()
         
         </div>
     </div>
+    <script>
+        var date = new Date();
+
+        var year = date.getFullYear();
+        var month = ((date.getMonth() + 1).length != 2 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1));
+        var day = ((date.getDate()).length != 2 ? "0" + (date.getDate()) : (date.getDate()));
+        
+        var currentDate = year + "-" + month + "-" + day;
+        var currentDatePlusOneYear = (year + 1) + "-" + month + "-" + day;
+        
+        jQuery("#coupon-date-input").attr("min", currentDatePlusOneYear);
+        jQuery("#card-add-input-date").attr("max", currentDate);
+    </script>
     <?php
 }
 
